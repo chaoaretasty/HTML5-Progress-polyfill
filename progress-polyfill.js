@@ -103,6 +103,9 @@ var self = window.ProgressPolyfill = {
 			},
 			
 			set: function(value) {
+				if (value > this.max){
+					value = this.max;
+				}
 				this.setAttribute('aria-valuenow', value);
 				
 				if(!attrsAsProps) {
